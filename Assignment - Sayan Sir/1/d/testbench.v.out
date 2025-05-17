@@ -1,0 +1,121 @@
+#! /mingw64/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\msys64\mingw64\lib\ivl\system.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\va_math.vpi";
+S_0000019ab172d820 .scope module, "tb" "tb" 2 4;
+ .timescale -9 -12;
+v0000019ab17cda50_0 .var "A", 3 0;
+v0000019ab17cdaf0_0 .var "B", 3 0;
+v0000019ab17ccbf0_0 .var "Cin", 0 0;
+v0000019ab17cc470_0 .net "Cout", 0 0, L_0000019ab17cf3c0;  1 drivers
+v0000019ab17cc5b0_0 .net "Sum", 3 0, L_0000019ab17cf2e0;  1 drivers
+S_0000019ab172d9b0 .scope module, "DUT" "cla" 2 10, 3 3 0, S_0000019ab172d820;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 4 "A";
+    .port_info 1 /INPUT 4 "B";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 4 "Sum";
+    .port_info 4 /OUTPUT 1 "Cout";
+L_0000019ab176d120 .functor XOR 4, v0000019ab17cda50_0, v0000019ab17cdaf0_0, C4<0000>, C4<0000>;
+L_0000019ab176d430 .functor AND 4, v0000019ab17cda50_0, v0000019ab17cdaf0_0, C4<1111>, C4<1111>;
+L_0000019ab176cf60 .functor BUFZ 1, v0000019ab17ccbf0_0, C4<0>, C4<0>, C4<0>;
+L_0000019ab176d200 .functor AND 1, L_0000019ab17cdcd0, L_0000019ab17cd870, C4<1>, C4<1>;
+L_0000019ab176d040 .functor OR 1, L_0000019ab17cc0b0, L_0000019ab176d200, C4<0>, C4<0>;
+L_0000019ab176cda0 .functor AND 1, L_0000019ab17cd230, L_0000019ab17cd9b0, C4<1>, C4<1>;
+L_0000019ab176d0b0 .functor OR 1, L_0000019ab17cd190, L_0000019ab176cda0, C4<0>, C4<0>;
+L_0000019ab176ce10 .functor AND 1, L_0000019ab17cc6f0, L_0000019ab17cdc30, C4<1>, C4<1>;
+L_0000019ab176d270 .functor OR 1, L_0000019ab17cc830, L_0000019ab176ce10, C4<0>, C4<0>;
+L_0000019ab176d350 .functor AND 1, L_0000019ab17cdd70, L_0000019ab17cd370, C4<1>, C4<1>;
+L_0000019ab17cf3c0 .functor OR 1, L_0000019ab17cd2d0, L_0000019ab176d350, C4<0>, C4<0>;
+L_0000019ab17cf2e0 .functor XOR 4, L_0000019ab176d120, L_0000019ab17cc650, C4<0000>, C4<0000>;
+v0000019ab176c0b0_0 .net "A", 3 0, v0000019ab17cda50_0;  1 drivers
+v0000019ab176c970_0 .net "B", 3 0, v0000019ab17cdaf0_0;  1 drivers
+v0000019ab176c510_0 .net "C", 3 0, L_0000019ab17cc650;  1 drivers
+v0000019ab176ca10_0 .net "Cin", 0 0, v0000019ab17ccbf0_0;  1 drivers
+v0000019ab176cb50_0 .net "Cout", 0 0, L_0000019ab17cf3c0;  alias, 1 drivers
+v0000019ab176cc90_0 .net "G", 3 0, L_0000019ab176d430;  1 drivers
+v0000019ab176cbf0_0 .net "P", 3 0, L_0000019ab176d120;  1 drivers
+v0000019ab176c3d0_0 .net "Sum", 3 0, L_0000019ab17cf2e0;  alias, 1 drivers
+v0000019ab176bf70_0 .net *"_ivl_11", 0 0, L_0000019ab17cc0b0;  1 drivers
+v0000019ab176c470_0 .net *"_ivl_13", 0 0, L_0000019ab17cdcd0;  1 drivers
+v0000019ab176c010_0 .net *"_ivl_15", 0 0, L_0000019ab17cd870;  1 drivers
+v0000019ab176c150_0 .net *"_ivl_16", 0 0, L_0000019ab176d200;  1 drivers
+v0000019ab176c1f0_0 .net *"_ivl_18", 0 0, L_0000019ab176d040;  1 drivers
+v0000019ab17cc330_0 .net *"_ivl_23", 0 0, L_0000019ab17cd190;  1 drivers
+v0000019ab17cd5f0_0 .net *"_ivl_25", 0 0, L_0000019ab17cd230;  1 drivers
+v0000019ab17cd910_0 .net *"_ivl_27", 0 0, L_0000019ab17cd9b0;  1 drivers
+v0000019ab17cc3d0_0 .net *"_ivl_28", 0 0, L_0000019ab176cda0;  1 drivers
+v0000019ab17cd690_0 .net *"_ivl_30", 0 0, L_0000019ab176d0b0;  1 drivers
+v0000019ab17cc510_0 .net *"_ivl_36", 0 0, L_0000019ab17cc830;  1 drivers
+v0000019ab17cd4b0_0 .net *"_ivl_38", 0 0, L_0000019ab17cc6f0;  1 drivers
+v0000019ab17cd550_0 .net *"_ivl_40", 0 0, L_0000019ab17cdc30;  1 drivers
+v0000019ab17cdb90_0 .net *"_ivl_41", 0 0, L_0000019ab176ce10;  1 drivers
+v0000019ab17cd730_0 .net *"_ivl_43", 0 0, L_0000019ab176d270;  1 drivers
+v0000019ab17cd0f0_0 .net *"_ivl_46", 0 0, L_0000019ab17cd2d0;  1 drivers
+v0000019ab17ccab0_0 .net *"_ivl_48", 0 0, L_0000019ab17cdd70;  1 drivers
+v0000019ab17cd7d0_0 .net *"_ivl_50", 0 0, L_0000019ab17cd370;  1 drivers
+v0000019ab17cc290_0 .net *"_ivl_51", 0 0, L_0000019ab176d350;  1 drivers
+v0000019ab17ccb50_0 .net *"_ivl_7", 0 0, L_0000019ab176cf60;  1 drivers
+L_0000019ab17cc0b0 .part L_0000019ab176d430, 0, 1;
+L_0000019ab17cdcd0 .part L_0000019ab176d120, 0, 1;
+L_0000019ab17cd870 .part L_0000019ab17cc650, 0, 1;
+L_0000019ab17cd190 .part L_0000019ab176d430, 1, 1;
+L_0000019ab17cd230 .part L_0000019ab176d120, 1, 1;
+L_0000019ab17cd9b0 .part L_0000019ab17cc650, 1, 1;
+L_0000019ab17cc650 .concat8 [ 1 1 1 1], L_0000019ab176cf60, L_0000019ab176d040, L_0000019ab176d0b0, L_0000019ab176d270;
+L_0000019ab17cc830 .part L_0000019ab176d430, 2, 1;
+L_0000019ab17cc6f0 .part L_0000019ab176d120, 2, 1;
+L_0000019ab17cdc30 .part L_0000019ab17cc650, 2, 1;
+L_0000019ab17cd2d0 .part L_0000019ab176d430, 3, 1;
+L_0000019ab17cdd70 .part L_0000019ab176d120, 3, 1;
+L_0000019ab17cd370 .part L_0000019ab17cc650, 3, 1;
+    .scope S_0000019ab172d820;
+T_0 ;
+    %vpi_call 2 13 "$dumpfile", "tb.vcd" {0 0 0};
+    %vpi_call 2 14 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000019ab172d820 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0000019ab172d820;
+T_1 ;
+    %pushi/vec4 6, 0, 4;
+    %store/vec4 v0000019ab17cda50_0, 0, 4;
+    %pushi/vec4 2, 0, 4;
+    %store/vec4 v0000019ab17cdaf0_0, 0, 4;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019ab17ccbf0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 5, 0, 4;
+    %store/vec4 v0000019ab17cda50_0, 0, 4;
+    %pushi/vec4 13, 0, 4;
+    %store/vec4 v0000019ab17cdaf0_0, 0, 4;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019ab17ccbf0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v0000019ab17cda50_0, 0, 4;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0000019ab17cdaf0_0, 0, 4;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019ab17ccbf0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 9, 0, 4;
+    %store/vec4 v0000019ab17cda50_0, 0, 4;
+    %pushi/vec4 3, 0, 4;
+    %store/vec4 v0000019ab17cdaf0_0, 0, 4;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019ab17ccbf0_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 26 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench.v";
+    "./design.v";

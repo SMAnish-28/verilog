@@ -1,0 +1,63 @@
+#! /mingw64/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\msys64\mingw64\lib\ivl\system.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\va_math.vpi";
+S_0000020f6d11a6f0 .scope module, "tb" "tb" 2 4;
+ .timescale -9 -12;
+v0000020f6d11aab0_0 .var "A", 3 0;
+v0000020f6d0cae40_0 .net "A_eq_B", 0 0, L_0000020f6d15fac0;  1 drivers
+v0000020f6d0caee0_0 .net "A_gt_B", 0 0, L_0000020f6d15f980;  1 drivers
+v0000020f6d15f840_0 .net "A_lt_B", 0 0, L_0000020f6d15fa20;  1 drivers
+v0000020f6d15f8e0_0 .var "B", 3 0;
+S_0000020f6d11a880 .scope module, "DUT" "mag_comp" 2 8, 3 3 0, S_0000020f6d11a6f0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 4 "A";
+    .port_info 1 /INPUT 4 "B";
+    .port_info 2 /OUTPUT 1 "A_gt_B";
+    .port_info 3 /OUTPUT 1 "A_lt_B";
+    .port_info 4 /OUTPUT 1 "A_eq_B";
+v0000020f6d0c8ff0_0 .net "A", 3 0, v0000020f6d11aab0_0;  1 drivers
+v0000020f6d0e6540_0 .net "A_eq_B", 0 0, L_0000020f6d15fac0;  alias, 1 drivers
+v0000020f6d0c8a70_0 .net "A_gt_B", 0 0, L_0000020f6d15f980;  alias, 1 drivers
+v0000020f6d0c7fa0_0 .net "A_lt_B", 0 0, L_0000020f6d15fa20;  alias, 1 drivers
+v0000020f6d11aa10_0 .net "B", 3 0, v0000020f6d15f8e0_0;  1 drivers
+L_0000020f6d15f980 .cmp/gt 4, v0000020f6d11aab0_0, v0000020f6d15f8e0_0;
+L_0000020f6d15fa20 .cmp/gt 4, v0000020f6d15f8e0_0, v0000020f6d11aab0_0;
+L_0000020f6d15fac0 .cmp/eq 4, v0000020f6d11aab0_0, v0000020f6d15f8e0_0;
+    .scope S_0000020f6d11a6f0;
+T_0 ;
+    %vpi_call 2 11 "$dumpfile", "tb.vcd" {0 0 0};
+    %vpi_call 2 12 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000020f6d11a6f0 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0000020f6d11a6f0;
+T_1 ;
+    %pushi/vec4 9, 0, 4;
+    %store/vec4 v0000020f6d11aab0_0, 0, 4;
+    %pushi/vec4 5, 0, 4;
+    %store/vec4 v0000020f6d15f8e0_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 2, 0, 4;
+    %store/vec4 v0000020f6d11aab0_0, 0, 4;
+    %pushi/vec4 8, 0, 4;
+    %store/vec4 v0000020f6d15f8e0_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 12, 0, 4;
+    %store/vec4 v0000020f6d11aab0_0, 0, 4;
+    %pushi/vec4 12, 0, 4;
+    %store/vec4 v0000020f6d15f8e0_0, 0, 4;
+    %delay 10000, 0;
+    %vpi_call 2 19 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench.v";
+    "./design.v";

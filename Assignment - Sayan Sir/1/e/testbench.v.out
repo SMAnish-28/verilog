@@ -1,0 +1,64 @@
+#! /mingw64/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\msys64\mingw64\lib\ivl\system.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\va_math.vpi";
+S_00000145cc02a300 .scope module, "tb" "tb" 2 4;
+ .timescale -9 -12;
+v00000145cc02a620_0 .var "data", 3 0;
+v00000145cc02a6c0_0 .net "error", 0 0, L_00000145cc147680;  1 drivers
+v00000145cc14ac00_0 .var "parity_in", 0 0;
+v00000145cc14aca0_0 .net "parity_out", 0 0, L_00000145cc14ad40;  1 drivers
+S_00000145cc02a490 .scope module, "DUT" "parity" 2 9, 3 3 0, S_00000145cc02a300;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 4 "data";
+    .port_info 1 /OUTPUT 1 "parity_out";
+    .port_info 2 /INPUT 1 "parity_in";
+    .port_info 3 /OUTPUT 1 "error";
+L_00000145cc147680 .functor XOR 1, v00000145cc14ac00_0, L_00000145cc14ad40, C4<0>, C4<0>;
+v00000145cbff6910_0 .net "data", 3 0, v00000145cc02a620_0;  1 drivers
+v00000145cbff6540_0 .net "error", 0 0, L_00000145cc147680;  alias, 1 drivers
+v00000145cc1489a0_0 .net "parity_in", 0 0, v00000145cc14ac00_0;  1 drivers
+v00000145cc1475e0_0 .net "parity_out", 0 0, L_00000145cc14ad40;  alias, 1 drivers
+L_00000145cc14ad40 .reduce/xor v00000145cc02a620_0;
+    .scope S_00000145cc02a300;
+T_0 ;
+    %vpi_call 2 17 "$dumpfile", "tb.vcd" {0 0 0};
+    %vpi_call 2 18 "$dumpvars", 32'sb00000000000000000000000000000000, S_00000145cc02a300 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_00000145cc02a300;
+T_1 ;
+    %pushi/vec4 13, 0, 4;
+    %store/vec4 v00000145cc02a620_0, 0, 4;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000145cc14ac00_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v00000145cc02a620_0, 0, 4;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000145cc14ac00_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v00000145cc02a620_0, 0, 4;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000145cc14ac00_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v00000145cc02a620_0, 0, 4;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000145cc14ac00_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 26 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench.v";
+    "./design.v";

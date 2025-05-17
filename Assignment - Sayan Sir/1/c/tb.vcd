@@ -1,0 +1,184 @@
+$date
+	Mon Mar 17 09:35:56 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb $end
+$var wire 4 ! Sum [3:0] $end
+$var wire 1 " Cout $end
+$var reg 4 # a [3:0] $end
+$var reg 4 $ b [3:0] $end
+$var reg 1 % mode $end
+$scope module DUT $end
+$var wire 4 & a [3:0] $end
+$var wire 4 ' b [3:0] $end
+$var wire 4 ( b_xor [3:0] $end
+$var wire 1 % mode $end
+$var wire 4 ) Sum [3:0] $end
+$var wire 1 " Cout $end
+$scope module aDDER $end
+$var wire 4 * a [3:0] $end
+$var wire 4 + b [3:0] $end
+$var wire 1 % cin $end
+$var wire 3 , carry [2:0] $end
+$var wire 4 - Sum [3:0] $end
+$var wire 1 " Cout $end
+$scope module Fa0 $end
+$var wire 1 . Cout $end
+$var wire 1 / Sum $end
+$var wire 1 0 a $end
+$var wire 1 1 b $end
+$var wire 1 % cin $end
+$upscope $end
+$scope module Fa1 $end
+$var wire 1 2 Cout $end
+$var wire 1 3 Sum $end
+$var wire 1 4 a $end
+$var wire 1 5 b $end
+$var wire 1 6 cin $end
+$upscope $end
+$scope module Fa2 $end
+$var wire 1 7 Cout $end
+$var wire 1 8 Sum $end
+$var wire 1 9 a $end
+$var wire 1 : b $end
+$var wire 1 ; cin $end
+$upscope $end
+$scope module Fa3 $end
+$var wire 1 " Cout $end
+$var wire 1 < Sum $end
+$var wire 1 = a $end
+$var wire 1 > b $end
+$var wire 1 ? cin $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+1?
+0>
+0=
+1<
+1;
+0:
+19
+08
+17
+06
+15
+14
+03
+12
+01
+00
+0/
+0.
+b1000 -
+b110 ,
+b10 +
+b110 *
+b1000 )
+b10 (
+b10 '
+b110 &
+0%
+b10 $
+b110 #
+0"
+b1000 !
+$end
+#10000
+0;
+02
+0?
+16
+13
+18
+07
+0<
+1"
+b1 ,
+1.
+05
+1:
+1>
+b110 !
+b110 )
+b110 -
+0/
+b1100 (
+b1100 +
+10
+04
+09
+1=
+1%
+b11 $
+b11 '
+b1001 #
+b1001 &
+b1001 *
+#20000
+1"
+1?
+0<
+1;
+17
+16
+03
+12
+08
+b111 ,
+1.
+11
+0:
+0>
+b0 !
+b0 )
+b0 -
+0/
+b1 (
+b1 +
+14
+19
+0%
+b1 $
+b1 '
+b1111 #
+b1111 &
+b1111 *
+#30000
+0"
+1<
+1;
+0?
+03
+12
+18
+b11 ,
+07
+15
+b1101 !
+b1101 )
+b1101 -
+1/
+b11 (
+b11 +
+04
+09
+1%
+b1100 $
+b1100 '
+b1001 #
+b1001 &
+b1001 *
+#40000

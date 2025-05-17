@@ -1,0 +1,87 @@
+#! /mingw64/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\msys64\mingw64\lib\ivl\system.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\va_math.vpi";
+S_000002a09aacc800 .scope module, "tb" "tb" 2 4;
+ .timescale -9 -12;
+v000002a09ab652b0_0 .var "a", 3 0;
+v000002a09ab65ad0_0 .var "b", 3 0;
+v000002a09ab65990_0 .net "y_and", 3 0, L_000002a09aae6710;  1 drivers
+v000002a09ab65670_0 .net "y_nand", 3 0, L_000002a09ab19460;  1 drivers
+v000002a09ab65df0_0 .net "y_nor", 3 0, L_000002a09ab66660;  1 drivers
+v000002a09ab65e90_0 .net "y_or", 3 0, L_000002a09ab19380;  1 drivers
+v000002a09ab65710_0 .net "y_xnor", 3 0, L_000002a09ab664a0;  1 drivers
+v000002a09ab65490_0 .net "y_xor", 3 0, L_000002a09ab666d0;  1 drivers
+S_000002a09aacc990 .scope module, "uut" "gates" 2 9, 3 3 0, S_000002a09aacc800;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 4 "a";
+    .port_info 1 /INPUT 4 "b";
+    .port_info 2 /OUTPUT 4 "y_and";
+    .port_info 3 /OUTPUT 4 "y_or";
+    .port_info 4 /OUTPUT 4 "y_nand";
+    .port_info 5 /OUTPUT 4 "y_nor";
+    .port_info 6 /OUTPUT 4 "y_xor";
+    .port_info 7 /OUTPUT 4 "y_xnor";
+P_000002a09ab0b650 .param/l "n" 0 3 3, +C4<00000000000000000000000000000100>;
+L_000002a09aae6710 .functor AND 4, v000002a09ab652b0_0, v000002a09ab65ad0_0, C4<1111>, C4<1111>;
+L_000002a09ab19380 .functor OR 4, v000002a09ab652b0_0, v000002a09ab65ad0_0, C4<0000>, C4<0000>;
+L_000002a09ab193f0 .functor AND 4, v000002a09ab652b0_0, v000002a09ab65ad0_0, C4<1111>, C4<1111>;
+L_000002a09ab19460 .functor NOT 4, L_000002a09ab193f0, C4<0000>, C4<0000>, C4<0000>;
+L_000002a09ab663c0 .functor OR 4, v000002a09ab652b0_0, v000002a09ab65ad0_0, C4<0000>, C4<0000>;
+L_000002a09ab66660 .functor NOT 4, L_000002a09ab663c0, C4<0000>, C4<0000>, C4<0000>;
+L_000002a09ab666d0 .functor XOR 4, v000002a09ab652b0_0, v000002a09ab65ad0_0, C4<0000>, C4<0000>;
+L_000002a09ab66190 .functor XOR 4, v000002a09ab652b0_0, v000002a09ab65ad0_0, C4<0000>, C4<0000>;
+L_000002a09ab664a0 .functor NOT 4, L_000002a09ab66190, C4<0000>, C4<0000>, C4<0000>;
+v000002a09ab0a860_0 .net *"_ivl_14", 3 0, L_000002a09ab66190;  1 drivers
+v000002a09aae6540_0 .net *"_ivl_4", 3 0, L_000002a09ab193f0;  1 drivers
+v000002a09aaccb20_0 .net *"_ivl_8", 3 0, L_000002a09ab663c0;  1 drivers
+v000002a09aaccbc0_0 .net "a", 3 0, v000002a09ab652b0_0;  1 drivers
+v000002a09ab192e0_0 .net "b", 3 0, v000002a09ab65ad0_0;  1 drivers
+v000002a09ab65f30_0 .net "y_and", 3 0, L_000002a09aae6710;  alias, 1 drivers
+v000002a09ab65d50_0 .net "y_nand", 3 0, L_000002a09ab19460;  alias, 1 drivers
+v000002a09ab653f0_0 .net "y_nor", 3 0, L_000002a09ab66660;  alias, 1 drivers
+v000002a09ab65170_0 .net "y_or", 3 0, L_000002a09ab19380;  alias, 1 drivers
+v000002a09ab650d0_0 .net "y_xnor", 3 0, L_000002a09ab664a0;  alias, 1 drivers
+v000002a09ab65210_0 .net "y_xor", 3 0, L_000002a09ab666d0;  alias, 1 drivers
+    .scope S_000002a09aacc800;
+T_0 ;
+    %vpi_call 2 21 "$dumpfile", "tb.vcd" {0 0 0};
+    %vpi_call 2 22 "$dumpvars", 32'sb00000000000000000000000000000000, S_000002a09aacc800 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_000002a09aacc800;
+T_1 ;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v000002a09ab652b0_0, 0, 4;
+    %pushi/vec4 12, 0, 4;
+    %store/vec4 v000002a09ab65ad0_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v000002a09ab652b0_0, 0, 4;
+    %pushi/vec4 3, 0, 4;
+    %store/vec4 v000002a09ab65ad0_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v000002a09ab652b0_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v000002a09ab65ad0_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v000002a09ab652b0_0, 0, 4;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v000002a09ab65ad0_0, 0, 4;
+    %delay 10000, 0;
+    %vpi_call 2 34 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench.v";
+    "./design.v";

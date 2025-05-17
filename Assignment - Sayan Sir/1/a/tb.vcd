@@ -1,0 +1,106 @@
+$date
+	Mon Mar 17 09:45:33 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb $end
+$var wire 4 ! y_xor [3:0] $end
+$var wire 4 " y_xnor [3:0] $end
+$var wire 4 # y_or [3:0] $end
+$var wire 4 $ y_nor [3:0] $end
+$var wire 4 % y_nand [3:0] $end
+$var wire 4 & y_and [3:0] $end
+$var reg 4 ' a [3:0] $end
+$var reg 4 ( b [3:0] $end
+$scope module uut $end
+$var wire 4 ) a [3:0] $end
+$var wire 4 * b [3:0] $end
+$var wire 4 + y_and [3:0] $end
+$var wire 4 , y_nand [3:0] $end
+$var wire 4 - y_nor [3:0] $end
+$var wire 4 . y_or [3:0] $end
+$var wire 4 / y_xnor [3:0] $end
+$var wire 4 0 y_xor [3:0] $end
+$var parameter 32 1 n $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b100 1
+$end
+#0
+$dumpvars
+b110 0
+b1001 /
+b1110 .
+b1 -
+b111 ,
+b1000 +
+b1100 *
+b1010 )
+b1100 (
+b1010 '
+b1000 &
+b111 %
+b1 $
+b1110 #
+b1001 "
+b110 !
+$end
+#10000
+b1110 %
+b1110 ,
+b1100 $
+b1100 -
+b1101 "
+b1101 /
+b1 &
+b1 +
+b11 #
+b11 .
+b10 !
+b10 0
+b11 (
+b11 *
+b1 '
+b1 )
+#20000
+b1111 %
+b1111 ,
+b0 $
+b0 -
+b0 "
+b0 /
+b0 &
+b0 +
+b1111 #
+b1111 .
+b1111 !
+b1111 0
+b0 (
+b0 *
+b1111 '
+b1111 )
+#30000
+b101 %
+b101 ,
+b101 $
+b101 -
+b1111 "
+b1111 /
+b1010 &
+b1010 +
+b1010 #
+b1010 .
+b0 !
+b0 0
+b1010 (
+b1010 *
+b1010 '
+b1010 )
+#40000
